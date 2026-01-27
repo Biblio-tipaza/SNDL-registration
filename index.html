@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استمارة معلومات المستخدم - SNDL</title>
+    <style>
+        :root { --main-color: #abbd21; --bg-color: #f4f7f1; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-color); margin: 0; padding: 20px; text-align: right; }
+        .form-card { max-width: 650px; margin: auto; background: white; border-radius: 8px; border-top: 10px solid var(--main-color); box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; }
+        .header { padding: 20px; text-align: center; border-bottom: 1px solid #eee; }
+        .content { padding: 25px; }
+        .section-title { background: #f9f9f9; padding: 10px; border-right: 5px solid var(--main-color); margin-bottom: 20px; font-weight: bold; color: #333; }
+        .input-group { margin-bottom: 20px; }
+        label { display: block; font-weight: 600; margin-bottom: 8px; color: #444; }
+        input[type="text"], input[type="email"], select { width: 100%; padding: 12px; border: 1px solid #dadce0; border-radius: 4px; box-sizing: border-box; font-size: 14px; }
+        input:focus { border-color: var(--main-color); outline: none; box-shadow: 0 0 5px rgba(171, 189, 33, 0.2); }
+        .submit-btn { background: var(--main-color); color: white; border: none; padding: 15px; width: 100%; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .submit-btn:hover { background: #8a991a; }
+        .required { color: red; margin-right: 4px; }
+    </style>
+</head>
+<body>
+
+<div class="form-card">
+    <div class="header">
+        <img src="https://www.sndl.cerist.dz/img/logo_sndl_header.png" alt="SNDL Logo" style="height: 55px;">
+        <h2>استمارة معلومات المستخدم</h2>
+    </div>
+
+    <form action="https://formspree.io/f/xwvlgbvl" method="POST" enctype="multipart/form-data" class="content">
+        
+        <div class="section-title">بيانات الحساب</div>
+        
+        <div class="input-group">
+            <label>اسم المستخدم (Identifiant) <span class="required">*</span></label>
+            <input type="text" name="identifiant" required placeholder="مثال: user_2026">
+        </div>
+
+        <div class="input-group">
+            <label>اللقب (Nom) <span class="required">*</span></label>
+            <input type="text" name="nom" required>
+        </div>
+
+        <div class="input-group">
+            <label>الاسم (Prénom) <span class="required">*</span></label>
+            <input type="text" name="prenom" required>
+        </div>
+
+        <div class="input-group">
+            <label>البريد الإلكتروني الشخصي <span class="required">*</span></label>
+            <input type="email" name="email" required placeholder="example@gmail.com">
+        </div>
+
+        <div class="input-group">
+            <label>الرتبة (Rôle) <span class="required">*</span></label>
+            <select name="role" required>
+                <option value="">اختر الرتبة...</option>
+                <option value="3eme année licence">3eme année licence</option>
+                <option value="Master II">Master II</option>
+                <option value="Post-graduant Magister">Post-graduant Magister</option>
+                <option value="Post-graduant Doctorant">Post-graduant Doctorant</option>
+                <option value="Enseignant">Enseignant</option>
+                <option value="Sciences Médicales">Sciences Médicales</option>
+            </select>
+        </div>
+
+        <div class="section-title">بيانات التحقق</div>
+
+        <div class="input-group">
+            <label>رقم بطاقة الطالب <span class="required">*</span></label>
+            <input type="text" name="student_card_id" required>
+        </div>
+
+        <div class="input-group">
+            <label>الكلية <span class="required">*</span></label>
+            <select name="faculty" required>
+                <option value="">اختر الكلية...</option>
+                <option value="كلية العلوم الاقتصادية">كلية العلوم الاقتصادية والعلوم التجارية وعلوم التسيير</option>
+                <option value="كلية العلوم السياسية">كلية العلوم السياسية والعلاقات الدولية</option>
+                <option value="كلية اللغة والادب العربي">كلية اللغة والادب العربي</option>
+                <option value="كلية العلوم">كلية العلوم</option>
+                <option value="كلية العلوم الطبيعية والحياة">كلية العلوم الطبيعية والحياة</option>
+                <option value="ملحقة الطب">ملحقة الطب</option>
+                <option value="المدرسة العليا للاساتذة">المدرسة العليا للاساتذة</option>
+                         <option value= "كلية العلوم الإنسانية والاجتماعية">كلية العلوم الانسانية والاجتماعية</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label>التخصص <span class="required">*</span></label>
+            <input type="text" name="specialty" required>
+        </div>
+
+        <button type="submit" class="submit-btn">إرسال الطلب للمسؤول</button>
+    </form>
+</div>
+
+</body>
+</html>
