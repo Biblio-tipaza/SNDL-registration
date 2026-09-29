@@ -17,6 +17,7 @@
         button { width: 100%; padding: 12px; background-color: #8cb43f; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: 0.3s; }
         button:hover { background-color: #6d8d31; }
         .required { color: red; }
+        #success-msg { display: none; background-color: #d4edda; color: #155724; padding: 15px; border-radius: 5px; text-align: center; margin-bottom: 20px; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -28,8 +29,10 @@
 
     <h2>استمارة معلومات المستخدم</h2>
 
-    <!-- تم دمج رابط الـ Web App الخاص بك هنا بنجاح -->
-    <form action="https://script.google.com/macros/s/AKfycbzDONez0M0oYT6HTnXBpz7CxnIgJUYtfLgX_zHqiNWuAAZr3u8kFbCshZol9pb1Ggdh/exec" method="POST">
+    <div id="success-msg">تم إرسال طلب التسجيل بنجاح! سيتم تحديث بياناتك في النظام.</div>
+
+    <!-- تم استخدام JavaScript للإرسال الآمن وتجاوز قيود المتصفح -->
+    <form id="sindlForm">
         
         <div class="section-title">بيانات الحساب</div>
 
@@ -95,9 +98,36 @@
             <input type="text" name="Specialty" placeholder="اكتب تخصصك هنا..." required>
         </div>
 
-        <button type="submit">إرسال طلب التسجيل</button>
+        <button type="submit" id="submitBtn">إرسال طلب التسجيل</button>
     </form>
 </div>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzDONez0M0oYT6HTnXBpz7CxnIgJUYtfLgX_zHqiNWuAAZr3u8kFbCshZol9pb1Ggdh/exec';
+    const form = document.getElementById('sindlForm');
+    const successMsg = document.getElementById('success-msg');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'جاري الإرسال...';
+
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => {
+                successMsg.style.display = 'block';
+                form.reset();
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'إرسال طلب التسجيل';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            })
+            .error(error => {
+                alert('حدث خطأ أثناء الإرسال، يرجى المحاولة مرة أخرى.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'إرسال طلب التسجيل';
+            });
+    });
+</script>
 
 </body>
 </html>
