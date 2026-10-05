@@ -31,12 +31,12 @@
             border-radius: 6px; 
         }
         
-        /* تنسيق العنوان والشعارين في الجانبين بدلاً من الدوائر الحمراء */
+        /* تنسيق العنوان والشعارين في الجانبين (21.png يمين و 00.png يسار) */
         .top-banner {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-align: center;
         }
         .side-logo {
@@ -122,15 +122,16 @@
 <body>
 
 <div class="container">
+    <!-- صورة الترويسة العليا الأساسية -->
     <div class="header-image">
         <img src="21.png" alt="جامعة تيبازة - المكتبة المركزية">
     </div>
 
-    <!-- الترويسة التي تحتوي على الشعار الجديد 00.png في الجانبين والعنوان في المنتصف -->
+    <!-- الترويسة بجانب العنوان: شعار 21.png على اليمين وشعار 00.png على اليسار -->
     <div class="top-banner">
-        <img src="00.png" alt="شعار" class="side-logo">
+        <img src="21.png" alt="شعار اليمين" class="side-logo">
         <h2>استمارة معلومات المستخدم</h2>
-        <img src="00.png" alt="شعار" class="side-logo">
+        <img src="00.png" alt="شعار اليسار" class="side-logo">
     </div>
 
     <!-- رسالة النجاح المخصصة -->
