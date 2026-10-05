@@ -15,11 +15,9 @@
         .container { 
             max-width: 650px; 
             margin: auto; 
-            /* تغيير خلفية الاستمارة إلى لون ذهبي متدرج مستوحى من الصور المرفقة */
             background: linear-gradient(135deg, #f7e9cc 0%, #e8c99b 100%); 
             padding: 25px; 
             border-radius: 12px; 
-            /* إطار منبثق وظل قوي يعطي طابعاً بارزاً ومتناسقاً مع الخلفية الداكنة */
             box-shadow: 0 10px 25px rgba(0,0,0,0.4); 
             border: 3px solid #d4af37; 
             border-top: 12px solid #8cb43f; 
@@ -35,7 +33,6 @@
             border: 2px solid #d4af37;
         }
         
-        /* إطار ملون، منبثق، وبخط واضح وغليظ للعنوان */
         .page-title-box {
             background: #ffffff;
             border: 2px solid #8cb43f;
@@ -127,9 +124,9 @@
 <body>
 
 <div class="container">
-    <!-- صورة الترويسة العليا -->
+    <!-- الترويسة العليا مع الصورة الجديدة -->
     <div class="header-image">
-        <img src="21.png" alt="جامعة تيبازة - المكتبة المركزية">
+        <img src="header-new.png" alt="جامعة تيبازة - المكتبة المركزية">
     </div>
 
     <!-- العنوان في إطار ملون ومنبثق وبخط غليظ -->
@@ -222,7 +219,6 @@
 
     form.addEventListener('submit', e => {
         e.preventDefault();
-        submitBtn.disabled =3; // fixed safety
         submitBtn.disabled = true;
         submitBtn.textContent = 'جاري الإرسال...';
 
