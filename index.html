@@ -17,7 +17,7 @@
         button { width: 100%; padding: 12px; background-color: #8cb43f; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: 0.3s; }
         button:hover { background-color: #6d8d31; }
         .required { color: red; }
-        #success-msg { display: none; background-color: #d4edda; color: #155724; padding: 15px; border-radius: 5px; text-align: center; margin-bottom: 20px; font-weight: bold; }
+        #success-msg { display: none; background-color: #d4edda; color: #155724; padding: 15px; border-radius: 5px; text-align: center; margin-bottom: 20px; font-weight: bold; line-height: 1.6; }
     </style>
 </head>
 <body>
@@ -29,9 +29,12 @@
 
     <h2>استمارة معلومات المستخدم</h2>
 
-    <div id="success-msg">تم إرسال طلب التسجيل بنجاح! سيتم تحديث بياناتك في النظام.</div>
+    <!-- رسالة النجاح المخصصة -->
+    <div id="success-msg">
+        تم إرسال طلبك بنجاح!<br>
+        سيتم إرسال (Identifiant) و (Mot de passe) الخاص بحسابك SNDL إلى بريدك الإلكتروني قريباً.
+    </div>
 
-    <!-- تم استخدام JavaScript للإرسال الآمن وتجاوز قيود المتصفح -->
     <form id="sindlForm">
         
         <div class="section-title">بيانات الحساب</div>
@@ -121,7 +124,7 @@
                 submitBtn.textContent = 'إرسال طلب التسجيل';
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             })
-            .error(error => {
+            .catch(error => {
                 alert('حدث خطأ أثناء الإرسال، يرجى المحاولة مرة أخرى.');
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'إرسال طلب التسجيل';
