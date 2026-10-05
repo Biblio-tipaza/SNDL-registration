@@ -5,19 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>استمارة معلومات المستخدم - SNDL</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; }
-        .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-top: 8px solid #8cb43f; }
-        .header-image { text-align: center; margin-bottom: 20px; }
-        .header-image img { max-width: 100%; height: auto; border-radius: 5px; }
-        h2 { text-align: center; color: #333; margin-top: 0; }
-        .section-title { background: #f9f9f9; padding: 10px; border-right: 5px solid #8cb43f; margin: 20px 0 15px; font-weight: bold; }
-        .form-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
-        input, select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; box-sizing: border-box; }
-        button { width: 100%; padding: 12px; background-color: #8cb43f; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: 0.3s; }
-        button:hover { background-color: #6d8d31; }
-        .required { color: red; }
-        #success-msg { display: none; background-color: #d4edda; color: #155724; padding: 15px; border-radius: 5px; text-align: center; margin-bottom: 20px; font-weight: bold; line-height: 1.6; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: linear-gradient(135deg, #2b6a8a 0%, #153b4f 100%); 
+            margin: 0; 
+            padding: 20px; 
+            min-height: 100vh;
+        }
+        .container { 
+            max-width: 650px; 
+            margin: auto; 
+            background: white; 
+            padding: 25px; 
+            border-radius: 12px; 
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2); 
+            border-top: 10px solid #8cb43f; 
+        }
+        .header-image { 
+            text-align: center; 
+            margin-bottom: 20px; 
+        }
+        .header-image img { 
+            max-width: 100%; 
+            height: auto; 
+            border-radius: 6px; 
+        }
+        
+        /* تنسيق العنوان والشعارين في الجانبين بدلاً من الدوائر الحمراء */
+        .top-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .side-logo {
+            width: 75px;
+            height: 75px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+            border: 2px solid #8cb43f;
+        }
+        h2 { 
+            color: #222; 
+            margin: 0; 
+            font-size: 26px; 
+            font-weight: 700;
+        }
+
+        .section-title { 
+            background: #f1f5f0; 
+            padding: 12px; 
+            border-right: 6px solid #8cb43f; 
+            margin: 25px 0 15px; 
+            font-weight: bold; 
+            font-size: 18px;
+            color: #333;
+        }
+        .form-group { 
+            margin-bottom: 18px; 
+        }
+        label { 
+            display: block; 
+            margin-bottom: 7px; 
+            font-weight: bold; 
+            color: #444; 
+            font-size: 16px;
+        }
+        input, select { 
+            width: 100%; 
+            padding: 12px; 
+            border: 1px solid #ccc; 
+            border-radius: 6px; 
+            box-sizing: border-box; 
+            font-size: 16px;
+        }
+        input:focus, select:focus {
+            border-color: #8cb43f;
+            outline: none;
+            box-shadow: 0 0 5px rgba(140, 180, 63, 0.3);
+        }
+        button { 
+            width: 100%; 
+            padding: 14px; 
+            background-color: #8cb43f; 
+            color: white; 
+            border: none; 
+            border-radius: 6px; 
+            font-size: 18px; 
+            font-weight: bold;
+            cursor: pointer; 
+            transition: 0.3s; 
+            margin-top: 10px;
+        }
+        button:hover { 
+            background-color: #6d8d31; 
+        }
+        .required { 
+            color: red; 
+        }
+        #success-msg { 
+            display: none; 
+            background-color: #d4edda; 
+            color: #155724; 
+            padding: 15px; 
+            border-radius: 6px; 
+            text-align: center; 
+            margin-bottom: 20px; 
+            font-weight: bold; 
+            font-size: 16px;
+            line-height: 1.6; 
+        }
     </style>
 </head>
 <body>
@@ -27,7 +126,12 @@
         <img src="21.png" alt="جامعة تيبازة - المكتبة المركزية">
     </div>
 
-    <h2>استمارة معلومات المستخدم</h2>
+    <!-- الترويسة التي تحتوي على الشعار الجديد 00.png في الجانبين والعنوان في المنتصف -->
+    <div class="top-banner">
+        <img src="00.png" alt="شعار" class="side-logo">
+        <h2>استمارة معلومات المستخدم</h2>
+        <img src="00.png" alt="شعار" class="side-logo">
+    </div>
 
     <!-- رسالة النجاح المخصصة -->
     <div id="success-msg">
